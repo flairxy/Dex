@@ -5,7 +5,10 @@ import '@openzeppelin/contracts/token/ERC20/ERC20.sol';
 
 
 contract Zrx is ERC20 {
-    constructor(uint256 initialSupply, address to) ERC20("Ox Token", "ZRX") {
-        _mint(to, initialSupply);
+    constructor() ERC20("Ox Token", "ZRX") {
+    }
+    
+    function faucet(address to, uint amount) external {
+        _mint(to, amount);
     }
 }
